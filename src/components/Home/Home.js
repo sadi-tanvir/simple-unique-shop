@@ -6,7 +6,7 @@ import TShirt from "../TShirt/TShirt";
 const Home = () => {
   const [tShirt, setTShirt] = useTShirt();
   const [cart, setCart] = useState([]);
-
+  const [qty, setQty] = useState(1)
   // add to cart item
   const handleAddToCart = (item) => {
     setCart([...cart, item]);
@@ -21,6 +21,19 @@ const Home = () => {
     // remove all item from cart
     const removeAllItem = () => {
       setCart([])
+    }
+
+    // increse quantity
+    const incQty = () => {
+      setQty(qty+1)
+    }
+    // increse quantity
+    const decQty = () => {
+      if(qty <= 1){
+        return;
+      }else{
+        setQty(qty-1)
+      }
     }
 
   return (
@@ -38,7 +51,7 @@ const Home = () => {
 
       {/* review container */}
       <div className="col-span-4">
-        <OrderReview removeItem={removeItem} removeAllItem={removeAllItem} cart={cart} />
+        <OrderReview removeItem={removeItem} removeAllItem={removeAllItem} cart={cart} qty={qty} incQty={incQty} decQty={decQty}/>
       </div>
     </div>
   );
