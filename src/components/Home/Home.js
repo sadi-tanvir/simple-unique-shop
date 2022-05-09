@@ -5,13 +5,21 @@ import TShirt from "../TShirt/TShirt";
 
 const Home = () => {
   const [tShirt, setTShirt] = useTShirt();
+  console.log(tShirt);
   const [cart, setCart] = useState([]);
   const [qty, setQty] = useState(1)
+  // const [isAvailable, setIsAvailable] = useState()
   // add to cart item
   const handleAddToCart = (item) => {
-    setCart([...cart, item]);
-  };
+    const productId = cart.map(item => item._id)
+    if(productId.includes(item._id)){
+      setQty(qty+1)
+    }else{
+      setCart([...cart, item]);
+    }
 
+  };
+  
   // remove from cart item
     const removeItem = (id) => {
         const restItem = cart.filter(item => item._id !== id)

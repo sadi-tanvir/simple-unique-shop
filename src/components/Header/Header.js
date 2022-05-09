@@ -10,9 +10,9 @@ const Header = () => {
           <li className="ml-3 bg-orange-300 px-3 py-1 rounded text-white no-underline">
             <CustomLink to="/">Home</CustomLink>
           </li>
-          <li className="ml-3 bg-orange-300 px-3 py-1 rounded">
+          {/* <li className="-3 m-0 p-0 rounded"> */}
             <CustomLink to="/order-review">Order Review</CustomLink>
-          </li>
+          {/* </li> */}
           <li className="ml-3 bg-orange-300 px-3 py-1 rounded">
             <CustomLink to="/friends">Friends</CustomLink>
           </li>

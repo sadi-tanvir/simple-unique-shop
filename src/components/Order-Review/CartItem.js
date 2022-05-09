@@ -11,7 +11,7 @@ const CartItem = ({ item, removeItem, qty, incQty,decQty }) => {
         <img className="w-20 h-20" src={picture} alt="" />
         <div className="flex ml-3 justify-center items-center">
           <div>
-            <h4 className="text-2xl font-bold">{name}</h4>
+            <h4 className="text-xl font-bold">{name}</h4>
             <p className="text-md font-semibold">Price: ${price}</p>
             <div className="flex mt-2">
               <MinusIcon 
