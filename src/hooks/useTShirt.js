@@ -6,7 +6,7 @@ const useTShirt = () => {
     const [tShirt, setTShirt] = useState([])
 
     useEffect(() => {
-        axios.get('tshirt.json')
+        axios.get('http://localhost:5000/product')
         .then(res => setTShirt(res.data))
     },[])
 
